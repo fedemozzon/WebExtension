@@ -2,5 +2,12 @@
     "manifest_version": 2,
     "author": "fedemozzon",
     "name": "WebExtension",
-    "version": "1.0"
+    "version": "1.0",
+    "content_scripts": [{
+      "matches": ["*://*/*"],
+      "js": [ "content_scripts/main.js" ]
+      }],
+  "browser_action": {
+    "default_title": "Make this page red"
+  }
 }
