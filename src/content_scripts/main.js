@@ -8,6 +8,7 @@ function insertButton(){
 //Copia un boton de la barra de Google para que sea con el mismo estilo
 function copyButton(){
     button = document.getElementById('hdtb-tls').cloneNode()
+    button.onclick = () => alert('anda')
     button.textContent = 'Extensión'
     return button
 }
