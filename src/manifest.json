@@ -7,6 +7,7 @@
       "matches": ["*://*/*"],
       "js": [ "content_scripts/main.js" ]
       }],
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://stackpath.bootstrapcdn.com; object-src 'self';",
   "browser_action": {
     "default_title": "Make this page red"
   }
