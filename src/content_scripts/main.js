@@ -17,7 +17,7 @@ function findWordSearched(){
     busqueda = document.getElementsByName('q')
     return busqueda[0].value
 }
-
+//Muestra, oculta o crea un popup 
 function showAPopup(){
     if(document.getElementsByClassName('cF4V5c').length == 3){
         if (document.getElementsByClassName('cF4V5c')[2].style.display == 'none'){
@@ -27,13 +27,16 @@ function showAPopup(){
     }
     else makeAPopup()
 }
+//cierra un popup
 function closePopup(popup){
     console.log(popup)
     popup.style.display = 'none'
 }
+//abre un popup
 function openPopup(popup){
     popup.style.display = 'initial'
 }
+//crea un popup
 function makeAPopup(){
     popup = (document.getElementsByClassName('cF4V5c')[1]).cloneNode(true)
     element = document.getElementById('lb')
