@@ -1,10 +1,11 @@
 insertButton()
 console.log(findWordSearched())
 insertButtonsForAllResults()
+
+
 //Inserta un boton en la barra de Google
 function insertButton(){
-    element = document.getElementById('hdtb-msb')
-    element.appendChild(copyButton())
+    document.getElementById('hdtb-msb').appendChild(copyButton())
 }
 //Copia un boton de la barra de Google para que sea con el mismo estilo
 function copyButton(){
@@ -15,12 +16,10 @@ function copyButton(){
 }
 //Toma del buscador la palabra buscada
 function findWordSearched(){
-    busqueda = document.getElementsByName('q')
-    return busqueda[0].value
+    return document.getElementsByName('q')[0].value
 }
 //Muestra, oculta o crea un popup 
 function showAPopup(){
-    console.log(document.getElementsByClassName('dgdd6c'))
     if(document.getElementsByClassName('cF4V5c').length == 3) openOrClosePopup()
     else makeAPopup()
 }
@@ -35,14 +34,7 @@ function openPopup(popup){
 //Crea un popup
 function makeAPopup(){
     popup = (document.getElementsByClassName('cF4V5c')[1]).cloneNode(true)
-    element = document.getElementById('lb')
-    popup.id = 'myPopup'
-    popup.style.left = '864.898px'
-    popup.style.top = '1119.5px'
-    popup.style.display = 'initial'
-    popup.role = 'menu'
-    popup.tabIndex = '-1'
-    element.appendChild(popup)
+    document.getElementById('lb').appendChild(initializePopup(popup))
 }
 //Determina si ocultar o mostrar el popup
 function openOrClosePopup(){
@@ -71,4 +63,15 @@ function transformHTMLCollectionToArray(htmlCollection){
 //A cada resultado obtenido en la búsqueda le pone un botón son su ubicación en DuckDuck y en Bing
 function insertButtonsForAllResults(){
     transformHTMLCollectionToArray(document.getElementsByClassName('r')).forEach((element)=> insertSearchersButtons(element))
+}
+
+//Setea los valores del popup a crear
+function initializePopup(popup){
+    popup.id = 'myPopup'
+    popup.style.left = '864.898px'
+    popup.style.top = '1119.5px'
+    popup.style.display = 'initial'
+    popup.role = 'menu'
+    popup.tabIndex = '-1'
+    return popup
 }
