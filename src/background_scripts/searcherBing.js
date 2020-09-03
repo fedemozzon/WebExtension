@@ -1,3 +1,5 @@
-class SearcherBing{
+class SearcherBing extends Searcher{
+    
+
 
 }

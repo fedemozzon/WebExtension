@@ -1,3 +1,3 @@
-class SearcherGoogle{
+class SearcherGoogle extends Searcher{
     
 }
