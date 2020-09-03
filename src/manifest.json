@@ -4,16 +4,23 @@
     "name": "WebExtension",
     "version": "1.0",
     "content_scripts": [{
-      "matches": ["*://*/*"],
-      "js": [ "content_scripts/main.js" ]
+      "matches": ["<all_urls>"],
+      "js": [ "node_modules/webextension-polyfill/dist/browser-polyfill.js",
+        "content_scripts/main.js" ]
       }],
     "background":{
       "scripts":[
+        "node_modules/webextension-polyfill/dist/browser-polyfill.js",
         "background_scripts/main.js"
-      ]
+      ],
+      "persistent":false
     },
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://stackpath.bootstrapcdn.com; object-src 'self';",
   "browser_action": {
     "default_title": "Make this page red"
-  }
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ]
 }

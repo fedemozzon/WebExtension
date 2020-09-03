@@ -1,7 +1,7 @@
 insertButton()
 console.log(findWordSearched())
 insertButtonsForAllResults()
-
+chrome.runtime.sendMessage({data:'saludo'},function(response){console.log(response)})
 
 //Inserta un boton en la barra de Google
 function insertButton(){
