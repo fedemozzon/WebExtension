@@ -3,6 +3,8 @@ chrome.runtime.onMessage.addListener(function (message,_,sendResponse) {
 console.log(message)
 sendResponse({response:'olaaaaaaa'})
 lolo = new SearcherDuckDuck()
-console.log(lolo.makeHTTPRequest())
+lolo2 = new SearcherGoogle()
+lolo.makeHTTPRequest()
+lolo2.makeHTTPRequest()
 return true
 })
