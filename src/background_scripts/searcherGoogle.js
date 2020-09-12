@@ -4,8 +4,9 @@ class SearcherGoogle extends Searcher{
     //Esto es necesario solo en el de google, es para restringir los sitios a donde consultar
     searchEngineID = '&cx=1b34643d8855a23b6'
 
-    searchOnTheWeb(word){
-        fetch(this.urlApi+word+this.apiKey+this.searchEngineID).then((response) => {console.log(response.json()) })
+    async searchOnTheWeb(word){
+        let response = await fetch(this.urlApi+word+this.apiKey+this.searchEngineID)
+        return await response.json()
     }
     
 }

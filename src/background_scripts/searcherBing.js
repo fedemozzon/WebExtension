@@ -4,10 +4,11 @@ class SearcherBing extends Searcher{
     key2 = 'b84b2a896e8246cc9652d1d7b10bbcb2'
     customConfigurationID = '&customconfig=f275cdf4-9523-4cc7-988e-8d44c7eb0332'
 
-    searchOnTheWeb(word){
-        fetch(this.urlApi+word+this.customConfigurationID,{headers:{
+    async searchOnTheWeb(word){
+        let response = await fetch(this.urlApi+word+this.customConfigurationID,{headers:{
             'Ocp-Apim-Subscription-Key' : this.key1
-        }}).then((response) => {console.log(response.json()) })
+        }})
+        return (await response.json())
     }
 
 
