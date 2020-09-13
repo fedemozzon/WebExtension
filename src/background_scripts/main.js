@@ -3,21 +3,12 @@ chrome.runtime.onMessage.addListener((message,_,sendResponse) => {
 (async () => {
 duck = new SearcherDuckDuck()
 google = new SearcherGoogle()
-cosa = await duck.searchOnTheWeb(message.data)
-cosa2 = await google.searchOnTheWeb(message.data)
+bing = new SearcherBing()
 sendResponse({
-        respuestaDuck: cosa,
-        respuestaGoogle: cosa2,
-        respuestaBing: 'lolo'
+        respuestaDuck: (await duck.searchOnTheWeb(message.data)).RelatedTopics,
+        respuestaGoogle: await google.searchOnTheWeb(message.data),
+        respuestaBing: (await bing.searchOnTheWeb(message)).webPages.value
     })
 })()
 return true
 })
-
-function respuestaBing(message){
-    bing = new SearcherBing()
-    bing.searchOnTheWeb(message.data).then(data => {
-        console.log(data.webPages)
-        return data.webPages
-    })
-}

@@ -8,7 +8,7 @@ class SearcherBing extends Searcher{
         let response = await fetch(this.urlApi+word+this.customConfigurationID,{headers:{
             'Ocp-Apim-Subscription-Key' : this.key1
         }})
-        return (await response.json())
+        return await response.json()
     }
 
 

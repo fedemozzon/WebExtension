@@ -4,8 +4,7 @@ class SearcherDuckDuck extends Searcher{
 
     async searchOnTheWeb(word){
         let response = await fetch(this.urlApi+word+this.formato)
-        let info = await response.json()
-        return info
+        return await response.json()
     }
     
 }
