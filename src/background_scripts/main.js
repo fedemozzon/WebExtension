@@ -4,8 +4,9 @@ chrome.runtime.onMessage.addListener((message,_,sendResponse) => {
 duck = new SearcherDuckDuck()
 google = new SearcherGoogle()
 bing = new SearcherBing()
+console.log(await duck.searchOnTheWeb(message.data))
 sendResponse({
-        respuestaDuck: await duck.searchOnTheWeb(message.data),
+        respuestaDuck: 'palta',
         respuestaGoogle: (await google.searchOnTheWeb(message.data)).items,
         respuestaBing: (await bing.searchOnTheWeb(message.data))
     })
