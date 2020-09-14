@@ -1,5 +1,6 @@
 insertButton()
 insertButtonsForAllResults()
+copyItemFromAList()
 chrome.runtime.sendMessage({data:findWordSearched()},function(response){console.log(response)})
 
 //Inserta un boton en la barra de Google
@@ -73,4 +74,11 @@ function initializePopup(popup){
     popup.role = 'menu'
     popup.tabIndex = '-1'
     return popup
+}
+
+function copyItemFromAList(){
+    item = document.getElementsByClassName('f9UGee')[0].cloneNode()
+    item.innerText = 'fede'
+    console.log(item)
+
 }

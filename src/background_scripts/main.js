@@ -5,9 +5,9 @@ duck = new SearcherDuckDuck()
 google = new SearcherGoogle()
 bing = new SearcherBing()
 sendResponse({
-        respuestaDuck: (await duck.searchOnTheWeb(message.data)).RelatedTopics,
-        respuestaGoogle: await google.searchOnTheWeb(message.data),
-        respuestaBing: (await bing.searchOnTheWeb(message)).webPages.value
+        respuestaDuck: await duck.searchOnTheWeb(message.data),
+        respuestaGoogle: (await google.searchOnTheWeb(message.data)).items,
+        respuestaBing: (await bing.searchOnTheWeb(message.data))
     })
 })()
 return true
