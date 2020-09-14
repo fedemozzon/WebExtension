@@ -7,8 +7,7 @@ bing = new SearcherBing()
 console.log(await duck.searchOnTheWeb(message.data))
 sendResponse({
         respuestaDuck: 'palta',
-        respuestaGoogle: (await google.searchOnTheWeb(message.data)).items,
-        respuestaBing: (await bing.searchOnTheWeb(message.data))
+        respuestaBing: 'papa'
     })
 })()
 return true
