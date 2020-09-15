@@ -17,4 +17,8 @@ class Searcher{
     htmlToResultList(html){
         return html
     }
+    //En base a un resultado devuelve la posición para la primer página del buscador, si no está devuelve -
+    position(result){
+
+    }
 }

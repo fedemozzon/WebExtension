@@ -3,7 +3,7 @@ class SearcherBing extends Searcher{
     format = ''
 
     htmlToResultList(html){
-        return html.getElementsByClassName('b_algo')
+        return Array.from(html.getElementsByClassName('b_algo'))
     }
 
 }
