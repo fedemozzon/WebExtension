@@ -1,5 +1,9 @@
 class SearcherBing extends Searcher{
-    urlApi = "https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?q="
+    urlApi = "https://www.bing.com/search?q="
     format = ''
+
+    htmlToResultList(html){
+        return html.getElementsByClassName('b_algo')
+    }
 
 }
