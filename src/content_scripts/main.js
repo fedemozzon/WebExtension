@@ -76,10 +76,10 @@ function initializePopup(popup){
 }
 
 // Copia un item de la lista 
-function copyItemFromAList(information){
+function copyItemFromAList(url,description){
     item = document.getElementsByClassName('f9UGee')[0].cloneNode()
-    console.log(information)
-    item.innerText = information
+    item.innerText = description
+    item.href = url
     return item
 
 }
@@ -92,11 +92,11 @@ function addItemsForPopup(popup){
 }
 //Agrega los resultados de buscar en bing
 function addItemsForBing(resultadosDeBing,popup){
-    resultadosDeBing.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget))
+    resultadosDeBing.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow))
     )
 
 }
 //Agrega los resultados de buscar en duck duck
 function addItemsForDuckDuck(resultadosDeDuckDuck,popup){
-    resultadosDeDuckDuck.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget)))
-}
+    console.log(resultadosDeDuckDuck)
+    resultadosDeDuckDuck.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow)))}
