@@ -1,7 +1,5 @@
 insertButton()
 insertButtonsForAllResults()
-copyItemFromAList()
-chrome.runtime.sendMessage({data:findWordSearched()},function(response){console.log(response)})
 
 //Inserta un boton en la barra de Google
 function insertButton(){
@@ -33,7 +31,8 @@ function openPopup(popup){
 }
 //Crea un popup
 function makeAPopup(){
-    popup = (document.getElementsByClassName('cF4V5c')[1]).cloneNode(true)
+    popup = (document.getElementsByClassName('cF4V5c')[1]).cloneNode()
+    addItemsForPopup(popup)
     document.getElementById('lb').appendChild(initializePopup(popup))
 }
 //Determina si ocultar o mostrar el popup
@@ -76,9 +75,28 @@ function initializePopup(popup){
     return popup
 }
 
-function copyItemFromAList(){
+// Copia un item de la lista 
+function copyItemFromAList(information){
     item = document.getElementsByClassName('f9UGee')[0].cloneNode()
-    item.innerText = 'fede'
-    console.log(item)
+    console.log(information)
+    item.innerText = information
+    return item
 
+}
+//Agrega una lista de items al Popup
+function addItemsForPopup(popup){
+    chrome.runtime.sendMessage({data:findWordSearched()},(response)=>{
+        addItemsForBing(response.respuestaBing,popup)
+        addItemsForDuckDuck(response.respuestaDuck,popup)
+    })
+}
+//Agrega los resultados de buscar en bing
+function addItemsForBing(resultadosDeBing,popup){
+    resultadosDeBing.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget))
+    )
+
+}
+//Agrega los resultados de buscar en duck duck
+function addItemsForDuckDuck(resultadosDeDuckDuck,popup){
+    resultadosDeDuckDuck.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget)))
 }
