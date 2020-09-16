@@ -1,4 +1,5 @@
 insertButton()
+makeAPopup()
 insertButtonsForAllResults()
 
 //Inserta un boton en la barra de Google
@@ -8,18 +9,13 @@ function insertButton(){
 //Copia un boton de la barra de Google para que sea con el mismo estilo
 function copyButton(){
     button = document.getElementById('hdtb-tls').cloneNode()
-    button.onclick = () => {showAPopup()}
+    button.onclick = () => {openOrClosePopup()}
     button.textContent = 'Mashup Results'
     return button
 }
 //Toma del buscador la palabra buscada
 function findWordSearched(){
     return document.getElementsByName('q')[0].value
-}
-//Muestra, oculta o crea un popup 
-function showAPopup(){
-    if(document.getElementsByClassName('cF4V5c').length == 3) openOrClosePopup()
-    else makeAPopup()
 }
 //Cierra un popup
 function closePopup(popup){
@@ -69,7 +65,7 @@ function initializePopup(popup){
     popup.id = 'myPopup'
     popup.style.left = '864.898px'
     popup.style.top = '1119.5px'
-    popup.style.display = 'initial'
+    popup.style.display = 'none'
     popup.role = 'menu'
     popup.tabIndex = '-1'
     return popup
@@ -78,6 +74,7 @@ function initializePopup(popup){
 // Copia un item de la lista 
 function copyItemFromAList(url,description){
     item = document.getElementsByClassName('f9UGee')[0].cloneNode()
+    console.log(url)
     item.innerText = description
     item.href = url
     return item
@@ -87,6 +84,7 @@ function copyItemFromAList(url,description){
 function addItemsForPopup(popup){
     chrome.runtime.sendMessage({data:findWordSearched()},(response)=>{
         addItemsForBing(response.respuestaBing,popup)
+        console.log('a partir de ahora los de duck')
         addItemsForDuckDuck(response.respuestaDuck,popup)
     })
 }
@@ -98,5 +96,4 @@ function addItemsForBing(resultadosDeBing,popup){
 }
 //Agrega los resultados de buscar en duck duck
 function addItemsForDuckDuck(resultadosDeDuckDuck,popup){
-    console.log(resultadosDeDuckDuck)
     resultadosDeDuckDuck.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow)))}
