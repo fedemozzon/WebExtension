@@ -15,8 +15,14 @@ class Searcher{
 
     //Convierte la pagina generada en una lista con los resultados, cada buscador la redefine en base a como aparece para ellos
     htmlToResultList(html){
-        return html
     }
+
+    //Transforma el resultado devuelto en un objeto Information
+
+    toInformation(urlTarget, description){
+        return new Information(urlTarget,description)
+    }
+    
     //En base a un resultado devuelve la posición para la primer página del buscador, si no está devuelve -
     position(result){
 
