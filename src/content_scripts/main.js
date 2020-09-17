@@ -37,6 +37,7 @@ function openOrClosePopup(){
 }
 //Inserta botón con la posición en Bing
 function insertBingButton(element,position){
+    console.log(position)
     element.insertAdjacentHTML('beforeend', '<img src="data:image/png;base64,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" id="external-flamingo" width="30" height="30" crossorigin="anonymous"><a>'+position+'</a>')
 }
 //Inserta botón con la posición en DuckDuck
@@ -46,8 +47,8 @@ function insertDuckDuckButton(element,position){
 
 //Inserta botones con la posición en los buscadores Bing y DuckDuck
 function insertSearchersButtons(duck,bing,element){
-    insertBingButton(element,position(bing,element.children[0].innerText))
-    insertDuckDuckButton(element,position(bing,element.children[0].innerText))
+    insertBingButton(element,position(bing,element.children[0].href))
+    insertDuckDuckButton(element,position(bing,element.children[0].href))
 }
 //Transforma una coleccion de elementos html a arreglo
 function transformHTMLCollectionToArray(htmlCollection){
@@ -100,11 +101,13 @@ function addItemsForBing(resultadosDeBing,popup){
 function addItemsForDuckDuck(resultadosDeDuckDuck,popup){
     resultadosDeDuckDuck.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow)))}
 
-function position(array,text){
+function position(array,link){
     array.forEach(element => {
-        console.log(element.textToShow)
-        console.log(text)
-        console.log(element.textToShow == text)
+        console.log(element.urlTarget)
+        console.log(link)
+        console.log(element.urlTarget == link)
     })
-    return array.indexOf(array.filter(element => element.textToShow == text))
+    index = array.indexOf(array.filter(element => element.urlTarget == link))
+     if (index == -1)return '-'
+     else return index
 }
