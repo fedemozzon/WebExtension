@@ -1,11 +1,13 @@
 class Searcher{
     urlApi = ''
+    results = ''
 
     //Realiza un HTTP Request según la url que tenga definido cada buscador
     //Podría haber una suerte de template method para la búsqueda en la web
     async searchOnTheWeb(word){
         let response = await fetch(this.urlApi+word)
-        return this.htmlToResultList(this.convertToHTML(await response.text())) 
+        this.results = this.htmlToResultList(this.convertToHTML(await response.text()))
+        return  this.results
     }
     //Convierte el texto recuperado de buscar a html
     convertToHTML(page){
@@ -22,8 +24,14 @@ class Searcher{
         return new Information(urlTarget,description)
     }
     
-    //En base a un resultado devuelve la posición para la primer página del buscador, si no está devuelve -
-    position(result){
-
+        //Extrae un <a> desde el div que recupera, como no tiene una clase para distinguirlos
+    //Voy sacando hasta llegar al elemento
+    giveMeAnAnchor(elementList){
+        return elementList.map((element)=> {
+            while(element.nodeName != 'A') {
+                element = element.children[0]
+            }
+            return element
+        })
     }
 }
