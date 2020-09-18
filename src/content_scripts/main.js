@@ -1,9 +1,9 @@
 insertButton()
-makeAPopup()
 
 //Inserta un boton en la barra de Google
 function insertButton(){
     document.getElementById('hdtb-msb').appendChild(copyButton())
+    makeAPopup()
 }
 //Copia un boton de la barra de Google para que sea con el mismo estilo
 function copyButton(){
@@ -48,7 +48,7 @@ function insertDuckDuckButton(element,position){
 //Inserta botones con la posición en los buscadores Bing y DuckDuck
 function insertSearchersButtons(duck,bing,element){
     insertBingButton(element,position(bing,element.children[0].href))
-    insertDuckDuckButton(element,position(bing,element.children[0].href))
+    insertDuckDuckButton(element,position(duck,element.children[0].href))
 }
 //Transforma una coleccion de elementos html a arreglo
 function transformHTMLCollectionToArray(htmlCollection){
@@ -86,7 +86,6 @@ function addItemsForPopup(popup){
         subject: 'query',
         data:findWordSearched()},(response)=>{
         addItemsForBing(response.respuestaBing,popup)
-        console.log('a partir de ahora los de duck')
         addItemsForDuckDuck(response.respuestaDuck,popup)
         insertButtonsForAllResults(response.respuestaDuck,response.respuestaBing)
     })
@@ -102,12 +101,7 @@ function addItemsForDuckDuck(resultadosDeDuckDuck,popup){
     resultadosDeDuckDuck.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow)))}
 
 function position(array,link){
-    array.forEach(element => {
-        console.log(element.urlTarget)
-        console.log(link)
-        console.log(element.urlTarget == link)
-    })
-    index = array.indexOf(array.filter(element => element.urlTarget == link))
+    index = array.indexOf(array.filter(element => element.urlTarget == link)[0])
      if (index == -1)return '-'
      else return index
 }
