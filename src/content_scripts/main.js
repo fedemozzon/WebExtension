@@ -107,6 +107,7 @@ function position(array,link){
      else return index+1
 }
 
+//En base a una posición en un arreglo devuelvo la posición ordinal
 function fromAPositionToText(position){
     switch (position){
     case 0: return 'Primer resultado de '
