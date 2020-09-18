@@ -24,7 +24,7 @@ class Searcher{
         return new Information(urlTarget,description)
     }
     
-        //Extrae un <a> desde el div que recupera, como no tiene una clase para distinguirlos
+    //Extrae un <a> desde el div que recupera, como no tiene una clase para distinguirlos
     //Voy sacando hasta llegar al elemento
     giveMeAnAnchor(elementList){
         return elementList.map((element)=> {

@@ -72,10 +72,9 @@ function initializePopup(popup){
 }
 
 // Copia un item de la lista 
-function copyItemFromAList(url,description){
+function copyItemFromAList(url,position,searcher){
     item = document.getElementsByClassName('f9UGee')[0].cloneNode()
-    console.log(url)
-    item.innerText = description
+    item.innerText = fromAPositionToText(position) + searcher
     item.href = url
     return item
 
@@ -92,13 +91,13 @@ function addItemsForPopup(popup){
 }
 //Agrega los resultados de buscar en bing
 function addItemsForBing(resultadosDeBing,popup){
-    resultadosDeBing.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow))
+    resultadosDeBing.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,resultadosDeBing.indexOf(element),'Bing'))
     )
 
 }
 //Agrega los resultados de buscar en duck duck
 function addItemsForDuckDuck(resultadosDeDuckDuck,popup){
-    resultadosDeDuckDuck.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow)))}
+    resultadosDeDuckDuck.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,resultadosDeDuckDuck.indexOf(element),'DuckDuckGo')))}
 
 //Recibe un arreglo y devuelve la posición para esa noticia
 //El +1 es porque el primer elemento es 0
@@ -106,4 +105,21 @@ function position(array,link){
     index = array.indexOf(array.filter(element => element.urlTarget == link)[0])
      if (index == -1)return '-'
      else return index+1
+}
+
+function fromAPositionToText(position){
+    switch (position){
+    case 0: return 'Primer resultado de '
+    case 1: return 'Segundo resultado de ' 
+    case 2: return 'Tercer resultado de '
+    case 3: return 'Cuarto resultado de '
+    case 4: return 'Quinto resultado de '
+    case 5: return 'Sexto resultado de '
+    case 6: return 'Septimo resultado de '
+    case 7: return 'Octavo resultado de '
+    case 8: return 'Noveno resultado de '
+    case 9: return 'Decimo resultado de '
+    case 10: return 'Onceavo resultado de '
+    case 11: return 'Decimo segundo resultado de '
+    }
 }
