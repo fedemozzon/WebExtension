@@ -100,8 +100,10 @@ function addItemsForBing(resultadosDeBing,popup){
 function addItemsForDuckDuck(resultadosDeDuckDuck,popup){
     resultadosDeDuckDuck.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow)))}
 
+//Recibe un arreglo y devuelve la posición para esa noticia
+//El +1 es porque el primer elemento es 0
 function position(array,link){
     index = array.indexOf(array.filter(element => element.urlTarget == link)[0])
      if (index == -1)return '-'
-     else return index
+     else return index+1
 }
