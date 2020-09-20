@@ -5,24 +5,21 @@
     "version": "1.0",
     "content_scripts": [{
       "matches": ["<all_urls>"],
-      "js": [ "node_modules/webextension-polyfill/dist/browser-polyfill.js",
-        "content_scripts/main.js" ]
+      "js": ["content_scripts/main.js" ]
       }],
     "background":{
       "scripts":[
-        "node_modules/webextension-polyfill/dist/browser-polyfill.js",
         "background_scripts/main.js",
         "background_scripts/searcher.js",
         "background_scripts/information.js",
         "background_scripts/searcherBing.js",
-        "background_scripts/searcherGoogle.js",
         "background_scripts/searcherDuckDuck.js"
       ],
       "persistent":false
     },
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://stackpath.bootstrapcdn.com; object-src 'self';",
   "browser_action": {
-    "default_title": "Make this page red"
+    "default_title": "Web Extension"
   },
   "permissions": [
     "tabs",
