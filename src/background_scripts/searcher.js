@@ -1,6 +1,5 @@
 class Searcher{
     urlApi = ''
-    results = ''
     searcher = ''
 
     //Realiza un HTTP Request según la url que tenga definido cada buscador
@@ -15,20 +14,19 @@ class Searcher{
         return new DOMParser().parseFromString(page, "text/html")
     }
 
-    //Convierte la pagina generada en una lista con los resultados, cada buscador la redefine en base a como aparece para ellos
+    //Convierte la pagina generada en una lista con los resultados
     htmlToResultList(html){
-        let filterResult = this.filter(html)
+        let filterResult = this.filterInformation(html)
         return filterResult.map((result) => this.toInformation(result.href,this.fromAPositionToText(filterResult.indexOf(result))+this.searcher ))
     }
 
     //Transforma el resultado devuelto en un objeto Information
-
     toInformation(urlTarget, description){
         return new Information(urlTarget,description)
     }
-    
-    filter(html){
-
+    //Cada buscador va a redefinir este en base a lo que necesite para parsear los resultados obtenidos
+    filterInformation(html){
+        return html
     }
     //Extrae un <a> desde el div que recupera, como no tiene una clase para distinguirlos
     //Voy sacando hasta llegar al elemento

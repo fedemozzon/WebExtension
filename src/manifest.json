@@ -13,6 +13,7 @@
         "background_scripts/searcher.js",
         "background_scripts/information.js",
         "background_scripts/searcherBing.js",
+        "background_scripts/searcherGoogle.js",
         "background_scripts/searcherDuckDuck.js"
       ],
       "persistent":false

@@ -83,18 +83,15 @@ function addItemsForPopup(popup){
     chrome.runtime.sendMessage({
         subject: 'query',
         data:findWordSearched()},(response)=>{
-        addItemsForBing(response.respuestaBing,popup)
-        addItemsForDuckDuck(response.respuestaDuck,popup)
+        addItemsForASearcher(response.respuestaBing,popup)
+        addItemsForASearcher(response.respuestaDuck,popup)
+        addItemsForASearcher(response.respuestaGoogle,popup)
         insertButtonsForAllResults(response.respuestaDuck,response.respuestaBing)
     })
 }
 //Agrega los resultados de buscar en bing
-function addItemsForBing(resultadosDeBing,popup){
-    resultadosDeBing.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow)))
-}
-//Agrega los resultados de buscar en duck duck
-function addItemsForDuckDuck(resultadosDeDuckDuck,popup){
-    resultadosDeDuckDuck.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow)))
+function addItemsForASearcher(results,popup){
+    results.forEach((element)=> popup.appendChild(copyItemFromAList(element.urlTarget,element.textToShow)))
 }
 
 //Recibe un arreglo y devuelve la posición para esa noticia
