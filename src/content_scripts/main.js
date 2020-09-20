@@ -1,3 +1,4 @@
+console.log(window.location)
 insertButton()
 
 //Inserta un boton en la barra de Google
