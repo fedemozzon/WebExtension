@@ -8,6 +8,8 @@
       "js": [
         "content_scripts/pageAumentation.js",
         "content_scripts/pageAumentationGoogle.js",
+        "content_scripts/pageAumentationDuck.js",
+        "content_scripts/pageAumentationBing.js",
         "content_scripts/main.js"]
       }],
     "background":{
