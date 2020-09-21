@@ -1,0 +1,3 @@
+class PageAumentationBing extends PageAumentation{
+    
+}

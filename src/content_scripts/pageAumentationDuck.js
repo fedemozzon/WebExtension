@@ -1,0 +1,3 @@
+class PageAumentationDuck extends PageAumentation{
+    
+}
