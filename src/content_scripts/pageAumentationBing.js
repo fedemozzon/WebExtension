@@ -28,19 +28,20 @@ openPopup(popup){
 //Setea los valores del popup a crear
 initializePopup(popup){
     popup.id = 'myPopup'
-    popup.class = 'ftrD'
+    popup.class = 'b_dropdown'
     return popup
 }
 
 //Inserta botones con la posición en dos buscadores
 insertSearchersButtons(fistSearcher,secondSearcher,element){
-    this.insertImageButton(element,this.position(fistSearcher,element.children[0].href),this.imagenDuck)
-    this.insertImageButton(element,this.position(secondSearcher,element.children[0].href),this.imagenGoogle)
+    console.log(element.children[0].children[0].href)
+    this.insertImageButton(element,this.position(fistSearcher,element.children[0].children[0].href),this.imagenDuck)
+    this.insertImageButton(element,this.position(secondSearcher,element.children[0].children[0].href),this.imagenGoogle)
 }
 
 //Copia una lista
 copyAList(){
-    return document.getElementsByClassName('f9UGee')[0].cloneNode()
+    return document.getElementsByClassName('ftrD')[0].children[0].cloneNode()
 }
 
 detectBar(){
@@ -53,7 +54,7 @@ copyButton(){
 }
 
 clonePopup(){
-    return (document.getElementsByClassName('b_dropdown')[2]).cloneNode(true)
+    return (document.getElementsByClassName('b_dropdown')[2]).cloneNode()
 }
 
 configPage(response,popup){
@@ -67,7 +68,7 @@ configPage(response,popup){
 makeAPopup(){
     let popup = this.clonePopup()
     console.log(popup)
-    // this.addItemsForPopup(popup)
+    this.addItemsForPopup(popup)
     document.getElementById('myButton').appendChild(this.initializePopup(popup))
 }
     

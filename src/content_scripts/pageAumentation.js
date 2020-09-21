@@ -18,6 +18,8 @@ class PageAumentation{
 
 //A cada resultado obtenido en la búsqueda le pone un botón con su ubicación en el primer arreglo y en el segundo
 insertButtonsForAllResults(fistSearcher,secondSearcher){
+    console.log(fistSearcher)
+    console.log(secondSearcher)
     this.transformHTMLCollectionToArray(this.resultList()).forEach((element)=> this.insertSearchersButtons(fistSearcher,secondSearcher,element))
 }
 //Transforma una coleccion de elementos html a arreglo
@@ -68,6 +70,7 @@ detectBar(){
 // Copia un item de la lista 
 copyItemFromAList(url,text){
     let item = this.copyAList()
+    console.log(item)
     item.innerText = text
     item.href = url
     return item
