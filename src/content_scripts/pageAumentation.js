@@ -83,6 +83,7 @@ insertButton(){
 initializeButton(button){
     button.onclick = () => {this.openOrClosePopup()}
     button.textContent = 'Mashup Results'
+    button.id = 'myButton'
     return button
 }
 
