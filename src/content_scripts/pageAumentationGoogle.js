@@ -73,5 +73,5 @@ makeAPopup(){
     this.addItemsForPopup(popup)
     document.getElementById('lb').appendChild(this.initializePopup(popup))
 }
-    
+
 }
