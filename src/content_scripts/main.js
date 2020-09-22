@@ -19,6 +19,7 @@ switch (window.location.host){
         page = new PageAumentationDuck()
         console.log('estoy en duck')
         console.log(page)
+        page.insertButton()
         break
     }
 }
