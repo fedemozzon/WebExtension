@@ -2,7 +2,7 @@ class PageAumentationDuck extends PageAumentation{
 
 //Retorna una lista de los resultados para la primer página del buscador
 resultList(){
-    return document.getElementsByClassName('b_algo')
+    return document.getElementsByClassName('result__body links_main links_deep')
 }
 
 //Toma del buscador la palabra buscada
