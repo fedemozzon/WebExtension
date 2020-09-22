@@ -28,7 +28,7 @@ openPopup(popup){
 //Setea los valores del popup a crear
 initializePopup(popup){
     popup.id = 'myPopup'
-    popup.class = 'b_dropdown'
+    popup.className = 'b_dropdown b_hide'
     return popup
 }
 
