@@ -34,8 +34,8 @@ initializePopup(popup){
 
 //Inserta botones con la posición en dos buscadores
 insertSearchersButtons(fistSearcher,secondSearcher,element){
-    this.insertImageButton(element,this.position(fistSearcher,element.children[0].children[0].href),this.imagenDuck)
-    this.insertImageButton(element,this.position(secondSearcher,element.children[0].children[0].href),this.imagenGoogle)
+    this.insertImageButton(element.children[0],this.position(fistSearcher,element.children[0].children[0].href),this.imagenDuck)
+    this.insertImageButton(element.children[0],this.position(secondSearcher,element.children[0].children[0].href),this.imagenGoogle)
 }
 
 //Copia una lista
@@ -80,7 +80,6 @@ configPage(response,popup){
 //Crea un popup
 makeAPopup(){
     let popup = this.clonePopup()
-    console.log(popup)
     this.addItemsForPopup(popup)
     document.getElementById('myButton').appendChild(this.initializePopup(popup))
 }
