@@ -69,12 +69,11 @@ detectBar(){
 
 // Copia un item de la lista 
 copyItemFromAList(url,text){
-    let item = this.copyAList()
-    console.log(item)
+}
+
+setItemList(item,text, url){
     item.innerText = text
     item.href = url
-    return item
-
 }
 
 //Inserta un boton en la barra de Google

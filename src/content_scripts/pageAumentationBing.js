@@ -34,14 +34,13 @@ initializePopup(popup){
 
 //Inserta botones con la posición en dos buscadores
 insertSearchersButtons(fistSearcher,secondSearcher,element){
-    console.log(element.children[0].children[0].href)
     this.insertImageButton(element,this.position(fistSearcher,element.children[0].children[0].href),this.imagenDuck)
     this.insertImageButton(element,this.position(secondSearcher,element.children[0].children[0].href),this.imagenGoogle)
 }
 
 //Copia una lista
 copyAList(){
-    return document.getElementsByClassName('ftrD')[0].children[0].cloneNode()
+    return document.getElementsByClassName('ftrD')[0].cloneNode()
 }
 
 detectBar(){
@@ -55,6 +54,20 @@ copyButton(){
 
 clonePopup(){
     return (document.getElementsByClassName('b_dropdown')[2]).cloneNode()
+}
+
+copyClickButton(){
+    return document.getElementsByClassName('b_toggle')[0].cloneNode()
+}
+
+// Copia un item de la lista 
+copyItemFromAList(url,text){
+    let item = this.copyAList()
+    let clickButton = this.copyClickButton()
+    this.setItemList(clickButton, text,url)
+    item.appendChild(clickButton)
+    return item
+
 }
 
 configPage(response,popup){

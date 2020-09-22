@@ -47,6 +47,13 @@ copyAList(){
     return document.getElementsByClassName('f9UGee')[0].cloneNode()
 }
 
+// Copia un item de la lista 
+copyItemFromAList(url,text){
+    let item = this.copyAList()
+    this.setItemList(item, text,url)
+    return item
+}
+
 detectBar(){
     return document.getElementById('hdtb-msb')
 }
