@@ -61,7 +61,7 @@ insertImageButton(element,position,image){
 //Copia una lista
 copyAList(){
 }
-
+//Detecta la barra donde insertar el boton que despliega el popup
 detectBar(){
 }
 
@@ -69,13 +69,14 @@ detectBar(){
 copyItemFromAList(url,text){
 }
 
+// asigna los valores a un item, en general item es un anchor para que sea clickeable
 setItemList(item,text, url){
     item.innerText = text
     item.href = url
 }
 
 //Inserta un boton en la barra de Google
-insertButton(){
+makePage(){
     this.detectBar().appendChild(this.initializeButton(this.copyButton()))
     this.makeAPopup()
 }
@@ -90,7 +91,7 @@ initializeButton(button){
 //Copia un boton de la barra de Google para que sea con el mismo estilo
 copyButton(){
 }
-
+//Copia un popup
 clonePopup(){
 }
 
@@ -102,7 +103,7 @@ addItemsForPopup(popup){
         this.configPage(response,popup)
     })
 }
-
+//Configuración de la página donde cada buscador define qué mostrar
 configPage(response,popup){
 }
 

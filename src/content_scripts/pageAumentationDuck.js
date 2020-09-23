@@ -43,6 +43,7 @@ copyAList(){
     return document.createElement('li')
 }
 
+//Detecta la barra de navegación donde insertar el botón que despliega el popup
 detectBar(){
     return document.getElementsByClassName('js-search-filters search-filters')[0]
 }
@@ -52,6 +53,7 @@ copyButton(){
     return document.getElementsByClassName('dropdown  dropdown--date')[0].cloneNode()
 }
 
+//Copia un popup
 clonePopup(){
     let elem = document.createElement('div')
     elem.className = 'modal--dropdown modal--dropdown--date modal modal--popover modal--popover--gray has-header js-dropdown-popout is-showing'
@@ -59,7 +61,7 @@ clonePopup(){
     this.setPopup(elem)
     return elem
 }
-
+//Esto crea los divs porque es imposible de clonar
 setPopup(elem){
     let hijito3 = document.createElement('ol')
     hijito3.className = 'modal__list'
@@ -75,6 +77,7 @@ setPopup(elem){
     elem.appendChild(hijito)
 }
 
+//Configuración de una página, cada página define el contenido que va a mostrar
 copyClickButton(){
     return document.getElementsByClassName('modal__body')[1].children[0].children[0].cloneNode()
 }
@@ -88,7 +91,7 @@ copyItemFromAList(url,text){
     return item
 
 }
-
+//Configuración de una página, cada página define el contenido que va a mostrar
 configPage(response,popup){
     this.addItemsForASearcher(response.respuestaBing,popup)
     this.addItemsForASearcher(response.respuestaDuck,popup)

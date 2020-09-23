@@ -16,7 +16,7 @@ switch (window.location.host){
     }
 
 }
-page.insertButton()
+page.makePage()
 
 
 

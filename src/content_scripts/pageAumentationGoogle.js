@@ -53,7 +53,7 @@ copyItemFromAList(url,text){
     this.setItemList(item, text,url)
     return item
 }
-
+//Detecta la barra de navegación donde insertar el botón que despliega el popup
 detectBar(){
     return document.getElementById('hdtb-msb')
 }
@@ -63,10 +63,12 @@ copyButton(){
     return document.getElementById('hdtb-tls').cloneNode()
 }
 
+//Copia un popup
 clonePopup(){
     return (document.getElementsByClassName('cF4V5c')[1]).cloneNode()
 }
 
+//Configuración de una página, cada página define el contenido que va a mostrar
 configPage(response,popup){
     this.addItemsForASearcher(response.respuestaBing,popup)
     this.addItemsForASearcher(response.respuestaDuck,popup)

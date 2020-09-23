@@ -43,6 +43,7 @@ copyAList(){
     return document.getElementsByClassName('ftrD')[0].cloneNode()
 }
 
+//Detecta la barra de navegación donde insertar el botón que despliega el popup
 detectBar(){
     return document.getElementById('b_tween')
 }
@@ -51,11 +52,11 @@ detectBar(){
 copyButton(){
     return document.getElementsByClassName('ftrB')[2].cloneNode()
 }
-
+//Copia un popup
 clonePopup(){
     return (document.getElementsByClassName('b_dropdown')[2]).cloneNode()
 }
-
+//Copia un anchor de una lista porque en general los items de una lista son un anchor andentro de un div
 copyClickButton(){
     return document.getElementsByClassName('b_toggle')[0].cloneNode()
 }
@@ -69,7 +70,7 @@ copyItemFromAList(url,text){
     return item
 
 }
-
+//Configuración de una página, cada página define el contenido que va a mostrar
 configPage(response,popup){
     this.addItemsForASearcher(response.respuestaBing,popup)
     this.addItemsForASearcher(response.respuestaDuck,popup)
