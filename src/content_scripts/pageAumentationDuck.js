@@ -55,7 +55,7 @@ copyButton(){
 clonePopup(){
     let elem = document.createElement('div')
     elem.className = 'modal--dropdown modal--dropdown--date modal modal--popover modal--popover--gray has-header js-dropdown-popout is-showing'
-    elem.style = 'top: 138px; left: 354.828px; background:rgb(255 255 255 / 0%)'
+    elem.style = 'top: 98px; left: 554.828px; background:rgb(255 255 255 / 0%); display:none'
     this.setPopup(elem)
     return elem
 }
