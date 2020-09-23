@@ -28,8 +28,6 @@
     "default_title": "Web Extension"
   },
   "permissions": [
-    "tabs",
-    "storage",
     "*://duckduckgo.com/html/*"
   ]
 }

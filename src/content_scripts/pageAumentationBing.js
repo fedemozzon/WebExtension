@@ -29,6 +29,7 @@ openPopup(popup){
 initializePopup(popup){
     popup.id = 'myPopup'
     popup.className = 'b_dropdown'
+    popup.style.display = 'none'
     return popup
 }
 
