@@ -45,7 +45,7 @@ copyAList(){
 
 //Detecta la barra de navegación donde insertar el botón que despliega el popup
 detectBar(){
-    return document.getElementsByClassName('js-search-filters search-filters')[0]
+    return document.getElementsByClassName('zcm')[0]
 }
 
 //Copia un boton de la barra de Bing para que sea con el mismo estilo

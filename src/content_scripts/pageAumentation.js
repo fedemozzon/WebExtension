@@ -75,7 +75,7 @@ setItemList(item,text, url){
     item.href = url
 }
 
-//Inserta un boton en la barra de Google
+//Inserta un boton en la barra
 makePage(){
     this.detectBar().appendChild(this.initializeButton(this.copyButton()))
     this.makeAPopup()

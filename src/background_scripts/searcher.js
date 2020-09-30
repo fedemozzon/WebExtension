@@ -17,6 +17,7 @@ class Searcher{
     //Convierte la pagina generada en una lista con los resultados
     htmlToResultList(html){
         let filterResult = this.filterInformation(html)
+        console.log(filterResult)
         return filterResult.map((result) => this.toInformation(result.href,this.fromAPositionToText(filterResult.indexOf(result))+this.searcher ))
     }
 
