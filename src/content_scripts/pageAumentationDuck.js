@@ -57,7 +57,7 @@ copyButton(){
 clonePopup(){
     let elem = document.createElement('div')
     elem.className = 'modal--dropdown modal--dropdown--date modal modal--popover modal--popover--gray has-header js-dropdown-popout is-showing'
-    elem.style = 'top: 143px; left: 554.828px; background:rgb(255 255 255 / 0%); display:none'
+    elem.style = 'top: 103px; left: 554.828px; background:rgb(255 255 255 / 0%); display:none'
     this.setPopup(elem)
     return elem
 }
@@ -79,7 +79,9 @@ setPopup(elem){
 
 //Configuración de una página, cada página define el contenido que va a mostrar
 copyClickButton(){
-    return document.getElementsByClassName('modal__body')[1].children[0].children[0].cloneNode()
+    let button = document.createElement('a')
+    button.className = 'modal__list__link    js-dropdown-items'
+    return button
 }
 
 // Copia un item de la lista 

@@ -71,6 +71,7 @@ copyItemFromAList(url,text){
 
 // asigna los valores a un item, en general item es un anchor para que sea clickeable
 setItemList(item,text, url){
+    console.log(item)
     item.innerText = text
     item.href = url
 }
