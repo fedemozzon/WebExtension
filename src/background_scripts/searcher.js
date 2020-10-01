@@ -54,6 +54,8 @@ class Searcher{
             case 9: return 'Decimo resultado de '
             case 10: return 'Onceavo resultado de '
             case 11: return 'Decimo segundo resultado de '
+            case 12: return 'Decimo Tercero resultado de '
+            case 13: return 'Decimo Cuarto resultado de '
         }
     }
 }
