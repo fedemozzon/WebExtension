@@ -3,7 +3,7 @@ class SearcherGoogle extends Searcher{
     searcher = 'Google'
 
     filterInformation(html){
-        return this.giveMeAnAnchor(Array.from(html.getElementsByClassName('r')))
+        return this.giveMeAnAnchor(Array.from(html.getElementsByClassName('yuRUbf')))
     }
 
 

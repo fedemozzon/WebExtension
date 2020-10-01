@@ -2,7 +2,7 @@ class PageAumentationGoogle extends PageAumentation{
 
 //Retorna una lista de los resultados para la primer página del buscador
 resultList(){
-    return document.getElementsByClassName('r')
+    return document.getElementsByClassName('yuRUbf')
 }
 
 //Toma del buscador la palabra buscada
