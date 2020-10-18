@@ -1,5 +1,5 @@
 class SearcherDuckDuck extends Searcher{
-    urlApi = "https://duckduckgo.com/html/?kl=ar-es&q="
+    urlApi = "https://html.duckduckgo.com/html/?kl=ar-es&q="
     searcher = 'DuckDuckGo'
 
     //En este caso reduzco el arreglo porque me da los resultados de varias páginas

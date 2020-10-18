@@ -21,13 +21,21 @@
         "background_scripts/searcherGoogle.js",
         "background_scripts/searcherDuckDuck.js"
       ],
-      "persistent":false
+      "persistent":true
     },
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://stackpath.bootstrapcdn.com; object-src 'self';",
   "browser_action": {
     "default_title": "Web Extension"
   },
   "permissions": [
-    "*://duckduckgo.com/html/*"
-  ]
+    "<all_urls>",
+    "nativeMessaging",
+    "webRequest"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mozzonfederico@gmail.com",
+      "strict_min_version": "70.0"
+    }
+  }
 }

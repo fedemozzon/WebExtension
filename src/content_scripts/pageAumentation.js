@@ -97,12 +97,14 @@ clonePopup(){
 
 //Agrega una lista de items al Popup
 addItemsForPopup(popup){
-    chrome.runtime.sendMessage({
-        subject: 'query',
-        data:this.findWordSearched()},(response)=>{
-        this.configPage(response,popup)
-    })
+    browser.runtime.sendMessage({
+        data:this.findWordSearched()},
+        (response)=>{
+            this.configPage(response,popup)
+        }
+         )
 }
+
 //Configuración de la página donde cada buscador define qué mostrar
 configPage(response,popup){
 }

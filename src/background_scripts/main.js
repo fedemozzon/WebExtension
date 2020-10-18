@@ -1,14 +1,14 @@
 //El parametro _ es porque en segundo lugar espera otro parametro, si no está, no anda
-chrome.runtime.onMessage.addListener((message,_,sendResponse) => {
-(async () => {
-duck = new SearcherDuckDuck()
-bing = new SearcherBing()
-google = new SearcherGoogle()
-sendResponse({
-        respuestaDuck: await duck.searchOnTheWeb(message.data),
-        respuestaBing: await bing.searchOnTheWeb(message.data),
-        respuestaGoogle: await google.searchOnTheWeb(message.data),
+browser.runtime.onMessage.addListener((message,_,sendResponse) => {
+    (async () => {
+    duck = new SearcherDuckDuck()
+    bing = new SearcherBing()
+    google = new SearcherGoogle()
+    sendResponse({
+            respuestaDuck: await duck.searchOnTheWeb(message.data),
+            respuestaBing: await bing.searchOnTheWeb(message.data),
+            respuestaGoogle: await google.searchOnTheWeb(message.data),
+        })
+    })()
+    return true
     })
-})()
-return true
-})
